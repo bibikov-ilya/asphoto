@@ -5,7 +5,10 @@ class PhotosController < ApplicationController
   end
 
   def create
-  	@photo = Photo.create photo_params  	
+    @photo = Photo.create photo_params  	
+    unless @photo
+  	  redirect_to action: :new
+  	end
   end
 
   def show
