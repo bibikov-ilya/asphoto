@@ -1,4 +1,4 @@
--@photos.each do |p|
-  =link_to image_tag(p.image.url(:thumb)), photo_path(p)
-
-= link_to 'Добавить фото', new_photo_path
+#gallery
+  -@photos.each do |p|
+    / .photo 
+    =image_tag p.image.url
