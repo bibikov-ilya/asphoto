@@ -42,3 +42,4 @@ gem 'haml'
 
 gem 'rails-gallery'
 gem 'paperclip', '~> 4.2'
+gem 'carrierwave'
