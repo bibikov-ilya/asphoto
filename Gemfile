@@ -43,4 +43,6 @@ gem 'haml'
 gem 'paperclip', '~> 4.2'
 gem 'carrierwave'
 
+gem 'therubyracer'
+gem 'less-rails'
 gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
