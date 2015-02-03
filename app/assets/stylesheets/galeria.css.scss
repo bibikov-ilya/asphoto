@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  background-color: #1d1d1d;
+}
+
+#gallery {  
+  height: 100%;
+  width: intrinsic;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  position: fixed;
+  overflow: hidden;
+  img {
+    float: left;
+    width: auto;      
+    height: 100%;
+    position: relative;
+    margin-right: 4px;
+  }
+}
