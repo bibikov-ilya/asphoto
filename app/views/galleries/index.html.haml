@@ -1,4 +1,4 @@
-#gallery
+#gallery.gallery.js-flickity
   -@photos.each do |p|
     / .photo 
-    =image_tag p.image.url
+    =image_tag(p.image.url, class: 'gallery-cell')
