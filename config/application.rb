@@ -21,5 +21,9 @@ module Asphoto
     # config.i18n.default_locale = :de
 
     Paperclip::Railtie.insert
+
+    # For Bootstrap Sass
+    config.assets.precompile = config.assets.precompile + %w(*.png *.jpg *.jpeg *.gif *.woff *.ttf *.svg *.eot)
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
 end
