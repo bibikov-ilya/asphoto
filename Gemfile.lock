@@ -50,6 +50,7 @@ GEM
     coffee-script-source (1.8.0)
     erubis (2.7.0)
     execjs (2.2.2)
+    greensock-rails (1.15.1.0)
     haml (4.0.6)
       tilt
     hike (1.2.3)
@@ -136,6 +137,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   carrierwave
   coffee-rails (~> 4.0.0)
+  greensock-rails
   haml
   jbuilder (~> 2.0)
   jquery-rails
