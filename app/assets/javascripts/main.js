@@ -11,12 +11,24 @@ var App = {
     });
   },
 
+  image_copyright: function() {
+    var copyTimer;
+    
+    $(document).on('contextmenu', '.copyright, #rail img', function(e) {
+      console.log('contextmenu');
+      clearTimeout(copyTimer);
+      $('#image-copyright').show().css('top', e.screenY - 90).css('left', e.screenX + 10);
+      copyTimer = setTimeout(function() {
+        $('#image-copyright').fadeOut(150);
+      }, 2000);
+      return false;
+    });        
+  },
+
   start: function() {        
     self = this;
     
-    if($('body').hasClass('image-copyright')) {
-        // App.image_copyright();
-    }
+    App.image_copyright();
 
     App.rail.start();
     App.resize();
