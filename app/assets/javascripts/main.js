@@ -3,16 +3,22 @@ var $window = $(window);
 var App = {
   rail: {
     focus: function(index) {
-      if ($('#rail img:eq(' + index + ')').length && index >= 0) {
-        self.currentIndex = index;
+      // if ($('#rail img:eq(' + index + ')').length && index >= 0) {
+        // unactive buttons on boundary photos
+        // $('#rail-buttons span').removeClass('unactive');                    
+        // if( index === 0 ) {
+        //     $('.rail-prev span').addClass('unactive');
+        // }      
+        // if( index+1 >= $('#rail img').length ) {
+        //     $('.rail-next span').addClass('unactive');
+        // }
 
-        $('#rail-buttons span').removeClass('unactive');                    
-        if( index === 0 ) {
-            $('.rail-prev span').addClass('unactive');
-        }      
-        if( index+1 >= $('#rail img').length ) {
-            $('.rail-next span').addClass('unactive');
-        }
+        // looped ratation
+        if (index < 0)
+          index = $('#rail img').length - 1;
+        else if (index >= $('#rail img').length)
+          index = 0;
+        self.currentIndex = index;
 
         var elementLeftPosition = parseInt($('#rail img:eq(' + index + ')').position().left, 10);
         var centerPosition = (elementLeftPosition - ($window.width() * 0.5)) + $('#rail img:eq(' + index + ')').width() * 0.5;
@@ -21,7 +27,7 @@ var App = {
         TweenMax.to($('#rail img:eq(' + index + ')'), 0.3, {delay: 0.3, opacity: 1});
 
         TweenMax.to($('#rail'), 0.8, {left: -centerPosition, ease: Expo.easeInOut});
-      }
+      // }
     },
 
     nav: function() {
