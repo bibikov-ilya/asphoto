@@ -9,7 +9,9 @@ var App = {
       var elementLeftPosition = parseInt($('#rail img:eq(' + index + ')').position().left, 10);
       var centerPosition = (elementLeftPosition - ($window.width() * 0.5)) + $('#rail img:eq(' + index + ')').width() * 0.5;
 
-      // TweenMax.to($('#rail img:eq('+currentIndex+')'), 0.3, {delay: 0.3, opacity: 0.3});
+      TweenMax.to($('#rail img:not(:eq(' + index + '))'), 0.3, {delay: 0.3, opacity: 0.3});
+      TweenMax.to($('#rail img:eq(' + index + ')'), 0.3, {delay: 0.3, opacity: 1});
+
       TweenMax.to($('#rail'), 0.8, {left: -centerPosition, ease: Expo.easeInOut});
     },
 
