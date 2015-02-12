@@ -1,8 +1,9 @@
 var $window = $(window);
+var self;
 
 var App = {
   resize: function() {
-    //$window.resize(function() {
+    // $window.resize(function() {
     $(window).on("debouncedresize", function() {
       if ($('#rail img').length) {
         App.rail.length();
@@ -82,6 +83,7 @@ var App = {
       
       totalRailWidth += 3000;
 
+      // $('#rail-slider').width(totalRailWidth);
       $('#rail').width(totalRailWidth + (totalRailWidth * 0.01));
     },
 
