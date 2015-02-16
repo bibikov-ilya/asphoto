@@ -72,6 +72,16 @@ var App = {
       $(document).on('click', '#rail-buttons .rail-prev', function() {
         App.rail.focus(self.currentIndex - 1);
       });
+
+      $('#rail').swipe({
+        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+          switch (direction)
+          {
+            case 'left': App.rail.focus(self.currentIndex + 1); break;
+            case 'right': App.rail.focus(self.currentIndex - 1); break;
+          }
+        }
+      });
     },
 
     length: function() {
