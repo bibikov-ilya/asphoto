@@ -82,6 +82,16 @@ var App = {
           }
         }
       });
+
+      $(window).on('mousewheel', function(e) {
+        if (e.originalEvent.wheelDelta > 0) {
+            // scroll up
+            App.rail.focus(self.currentIndex - 1);
+        } else {
+            // scroll down
+            App.rail.focus(self.currentIndex + 1);
+        }
+      });
     },
 
     length: function() {
