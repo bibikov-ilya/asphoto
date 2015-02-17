@@ -41,10 +41,10 @@ var App = {
         // unactive buttons on boundary photos
         // $('#rail-buttons span').removeClass('unactive');                    
         // if( index === 0 ) {
-        //     $('.rail-prev span').addClass('unactive');
+        //     $('#rail-prev span').addClass('unactive');
         // }      
         // if( index+1 >= $('#rail img').length ) {
-        //     $('.rail-next span').addClass('unactive');
+        //     $('#rail-next span').addClass('unactive');
         // }
 
         // looped ratation
@@ -65,11 +65,11 @@ var App = {
     },
 
     nav: function() {
-      $(document).on('click', '#rail-buttons .rail-next', function() {
+      $(document).on('click', '#rail-buttons #rail-next', function() {
         App.rail.focus(self.currentIndex + 1);
       });
 
-      $(document).on('click', '#rail-buttons .rail-prev', function() {
+      $(document).on('click', '#rail-buttons #rail-prev', function() {
         App.rail.focus(self.currentIndex - 1);
       });
 
