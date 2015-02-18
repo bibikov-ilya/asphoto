@@ -26,10 +26,31 @@ var App = {
     });        
   },
 
+  menu: function() {
+    $(document).on('click', '#menu-toggle', function() {
+      var menuToggle = $('#menu-toggle'), menu = $('#main-menu');
+      var postitonMenu = 0, positionButtons = 0;
+
+      if (menu.hasClass('visible')) {
+        menu.toggleClass('visible');
+        postitonMenu = -menu.width();
+        positionButtons = 40;
+      } else {
+        menu.addClass('visible');
+        postitonMenu = 0;
+        positionButtons = menu.width() + 40;
+      }
+
+      TweenMax.to(menu, 0.4, {left: postitonMenu, ease: Expo.easeInOut});
+      TweenMax.to($('#menu-buttons'), 0.4, {left: positionButtons, ease: Expo.easeInOut});
+    });
+  },
+
   start: function() {        
     self = this;
     
     App.image_copyright();
+    App.menu();
 
     App.rail.start();
     App.resize();
