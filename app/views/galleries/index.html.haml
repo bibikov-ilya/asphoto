@@ -1,5 +1,38 @@
 #main-menu
-  FUCK!!
+  #logo
+    =link_to image_tag('logo.png'), root_path
+
+  .menu-list
+    =link_to 'WEDDING/LOVE-STORY', '#'
+    =link_to 'PORTRAITS', '#'
+    =link_to 'MISC', '#'
+    =link_to 'INFORMATION', '#'
+    =link_to 'CONTACT', '#'
+
+  .social-holder
+    %ul.social
+      %li
+        =link_to 'http://instagram.com/_as_photo/', {target: '_blank', title: 'Instagram'} do
+          %span.symbol instagram
+      %li
+        =link_to 'https://www.facebook.com/afersergeys', {target: '_blank', title: 'Facebook'} do
+          %span.symbol facebook
+      %li
+        =link_to 'https://vk.com/af_er', {target: '_blank', title: 'vk.com'} do
+          %span.symbol aboutme
+      %li
+        =link_to '#', {target: '_blank', title: 'Mail'} do
+          %span.symbol email
+      %li
+        =link_to 'https://500px.com/aferphoto', {target: '_blank', title: '500px'} do
+          %span.symbol fivehundredpx
+
+    %span.round-pad
+
+  .bottom-part
+    %p
+      All rights reserved
+      =link_to "Afanas'ev Sergey ©", 'https://vk.com/af_er', {target: '_blank'}
 
 #menu-buttons
   .arrow#menu-toggle

@@ -3,13 +3,80 @@ body
   background-color: #1d1d1d
 
 #main-menu
-  width: 250px
-  left: -250px
+  width: 300px
+  left: -300px
   height: 100%
   display: block
   position: fixed
-  background-color: rgba(255,0,0,0.6)
+  background-color: rgba(29,29,29,0.8)
+  text-align: center
   z-index: 2
+  #logo 
+    padding: 50px 15px 30px 15px
+    text-align: center
+  .menu-list a
+    font-size: 30px
+    line-height: 90%
+    display: block
+    padding: 12px
+    color: #fff
+    text-decoration: none
+    text-transform: uppercase
+    font-family: 'Oswald'
+    transition: all .3s ease-in-out
+    -moz-transition: all .3s ease-in-out
+    -webkit-transition: all .3s ease-in-out
+    &:hover
+      color: rgb(173,5,5)
+  .social-holder
+    position: relative
+    .social
+      margin: 55px 0 0 0
+      padding: 0
+      list-style: none
+      li
+        display: inline-block
+      a
+        text-decoration: none
+        position: relative
+        z-index: 2
+      span
+        color: #fff
+        font-size: 42px
+    .round-pad
+      width: 30px
+      height: 30px
+      background-color: rgb(173,5,5)
+      position: absolute
+      display: block
+      top: 0
+      left: 0
+      opacity: 0
+      border-radius: 50%
+      -moz-border-radius: 50%
+      -webkit-border-radius: 50%
+      z-index: 1
+  .bottom-part
+    text-align: center
+    width: 100%
+    padding-bottom: 15px
+    p
+      display: inline-block
+      padding: 2px 8px 2px
+      line-height: 125%
+      color: rgba(255,255,255,0.5)
+      margin: 25px 0 0
+      border: 2px solid rgb(173,5,5)
+      font-size: 12px
+      font-style: italic
+      border-radius: 12px
+      -moz-border-radius: 12px
+      -webkit-border-radius: 12px
+    a
+      text-decoration: none
+      color: #fff
+      &:hover
+        color: rgb(173,5,5)
 
 #rail 
   height: 100%

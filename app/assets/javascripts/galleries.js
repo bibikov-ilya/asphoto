@@ -15,7 +15,7 @@ var App = {
   image_copyright: function() {
     var copyTimer;
     
-    $(document).on('contextmenu', '.copyright, #rail img', function(e) {
+    $(document).on('contextmenu', '.copyright, #rail img, #main-menu', function(e) {
       console.log('contextmenu');
       clearTimeout(copyTimer);
       $('#image-copyright').show().css('top', e.screenY - 90).css('left', e.screenX + 10);
@@ -46,11 +46,22 @@ var App = {
     });
   },
 
+  social_icons: function() {
+    $('.social a').bind('mouseenter', function() {
+      console.log('enter');
+      TweenLite.to($('.social-holder .round-pad'), 0.4, {opacity: 1, top: 15, left: $(this).position().left + 3, ease: Back.easeOut});
+    }).bind('mouseleave', function() {
+      console.log('leave');
+      TweenLite.to($('.social-holder .round-pad'), 0.4, {opacity: 0, top: 15});
+    });
+  },
+
   start: function() {        
     self = this;
     
     App.image_copyright();
     App.menu();
+    App.social_icons();
 
     App.rail.start();
     App.resize();
