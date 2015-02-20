@@ -33,10 +33,12 @@ var App = {
 
       if (menu.hasClass('visible')) {
         menu.toggleClass('visible');
+        menuToggle.removeClass('cross');
         postitonMenu = -menu.width();
         positionButtons = 40;
       } else {
         menu.addClass('visible');
+        menuToggle.addClass('cross');
         postitonMenu = 0;
         positionButtons = menu.width() + 40;
       }
