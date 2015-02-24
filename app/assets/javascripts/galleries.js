@@ -16,7 +16,6 @@ var App = {
     var copyTimer;
     
     $(document).on('contextmenu', '.copyright, #rail img, #main-menu', function(e) {
-      console.log('contextmenu');
       clearTimeout(copyTimer);
       $('#image-copyright').show().css('top', e.screenY - 90).css('left', e.screenX + 10);
       copyTimer = setTimeout(function() {
@@ -63,23 +62,16 @@ var App = {
         // TweenMax.to($('#menu-toggle'), 0.4, {left: positionButtons, ease: Expo.easeInOut});
       });
 
-      $(document).on('click', 'html', function() {
+      $(document).on('click', '#rail, #rail-info', function() {
         App.menu.hide();
-      });
-
-      $(document).on('click', '#main-menu, #menu-toggle', function() {
-        if (menu.hasClass('visible'))
-          event.stopPropagation();
       });
     }
   },
 
   social_icons: function() {
     $('.social a').bind('mouseenter', function() {
-      console.log('enter');
       TweenLite.to($('.social-holder .round-pad'), 0.4, {opacity: 1, top: 15, left: $(this).position().left + 3, ease: Back.easeOut});
     }).bind('mouseleave', function() {
-      console.log('leave');
       TweenLite.to($('.social-holder .round-pad'), 0.4, {opacity: 0, top: 15});
     });
   },
