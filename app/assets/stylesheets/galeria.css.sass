@@ -120,12 +120,6 @@ body
     margin-top: 15px
     text-align: center
 
-#menu-buttons
-  position: fixed
-  top: 40px
-  left: 40px
-  z-index: 3  
-
 .arrow
   cursor: pointer
   display: inline-block
@@ -141,6 +135,12 @@ body
   border-radius: 50%
   -moz-border-radius: 50%
   -webkit-border-radius: 50%
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
   span
     display: inline-block
     color: #fff
@@ -156,42 +156,113 @@ body
     &.unactive
       cursor: default
       background-color: transparent
-    .line, .line:before, .line:after
+
+#menu-buttons
+  position: fixed
+  top: 40px
+  left: 40px
+  z-index: 3
+  #menu-toggle
+    position: fixed
+    top: 40px
+    left: 40px
+    display: block
+    width: 50px
+    height: 50px
+    padding: 6px
+    color: #fff
+    cursor: pointer
+    user-select: none
+    -ms-user-select: none
+    -moz-user-select: none
+    -khtml-user-select: none
+    -webkit-user-select: none
+    -webkit-touch-callout: none
+    border-radius: 50
+    -moz-border-radius: 50%
+    -webkit-border-radius: 50%
+    z-index: 10
+    &:before
+      top: 0
+      left: 0
+      content: ""
       position: absolute
-      height: 2px
-      background-color: rgba(255,255,255,1)
-      width: 18px
-    .line
-      top: 23px
-      left: 16px
-    .line:before
-      content: ''
-      top: -6px
-      left: 0
-    .line:after
-      content: ''
-      top: 6px
-      left: 0
-  &.cross
-    background-color: transparent
-    span
-      background-color: transparent
-      border-color: rgba(255,255,255,0.6)
-      border-style: solid
-      border-width: 1px
-  &.cross .line
-    background-color: rgba(0,0,0,0)
-  &.cross .line:before
-    top: 0
-    transform: rotate(-45deg)
-    -moz-transform: rotate(-45deg)
-    -webkit-transform: rotate(-45deg)
-  &.cross .line:after
-    top: 0
-    transform: rotate(45deg)
-    -moz-transform: rotate(45deg)
-    -webkit-transform: rotate(45deg)
-  &.cross .lines
-    // transform: rotate(180deg)
-    -moz-transform: rotate(180deg)
-    // -webkit-transform: rotate(180deg)
+      width: 50px
+      height: 50px
+      background-color: rgba(0,0,0,0.2)
+      border-radius: 50%
+      -moz-border-radius: 50%
+      -webkit-border-radius: 50%
+      z-index: 3
+    &:after
+      content: ""
+      position: absolute
+      top: 5px
+      left: 5px
+      width: 40px
+      height: 40px
+      background-color: #000
+      border-radius: 50%
+      -moz-border-radius: 50%
+      -webkit-border-radius: 50%
+      z-index: 2
+    .menu-lines
+      position: fixed
+      top: 45px
+      left: 42px
+      display: block
+      width: 46px
+      height: 41px
+      padding: 0 0 0 14px
+      z-index: 11
+      .line
+        top: 19px
+        position: absolute
+      .line, .line:before, .line:after
+        position: absolute
+        height: 2px
+        background-color: rgba(255,255,255,1)
+        position: absolute
+        width: 18px
+      .line:before
+        content: ''
+        top: -6px
+        left: 0
+      .line:after
+        content: ''
+        top: 6px
+        left: 0
+    &.cross .line 
+      background-color: rgba(0,0,0,0)      
+    &.cross .line:before
+      top: 0
+      transform: rotate(-45deg)
+      -moz-transform: rotate(-45deg)
+      -webkit-transform: rotate(-45deg)
+    &.cross .line:after    
+      // position: absolute
+      top: 0
+      transform: rotate(45deg)
+      -moz-transform: rotate(45deg)
+      -webkit-transform: rotate(45deg)
+    &.cross .menu-lines    
+      // position: absolute
+      // top: 3px
+      // left: 3px
+      transform: rotate(180deg)
+      -moz-transform: rotate(180deg)
+      -webkit-transform: rotate(180deg)
+      
+    // &.cross
+      // background-color: transparent
+      // span
+        // padding: 0 0 0 14px
+        // background-color: transparent
+        // border-color: rgba(255,255,255,0.6)
+        // border-style: solid
+        // border-width: 1px
+
+#menu-toggle .line, #menu-toggle .line:after, #menu-toggle .line:before, #menu-toggle.cross .menu-lines
+  transition: all .7s cubic-bezier(.89,-0.02,.17,1.04)
+  -moz-transition: all .7s cubic-bezier(.89,-0.02,.17,1.04)
+  -webkit-transition: all .7s cubic-bezier(.89,-0.02,.17,1.04)

@@ -26,26 +26,52 @@ var App = {
     });        
   },
 
-  menu: function() {
-    $(document).on('click', '#menu-toggle', function() {
-      var menuToggle = $('#menu-toggle'), menu = $('#main-menu');
-      var postitonMenu = 0, positionButtons = 0;
+  menu: {
+    hide: function() {
+      var menu = $('#main-menu');
+      menu.removeClass('visible');
+      TweenMax.to(menu, 0.4, {left: -menu.width(), ease: Expo.easeInOut});
+      TweenMax.to($('#menu-toggle'), 0.4, {opacity: 1, ease: Expo.easeInOut});
+    },
 
-      if (menu.hasClass('visible')) {
-        menu.toggleClass('visible');
-        menuToggle.removeClass('cross');
-        postitonMenu = -menu.width();
-        positionButtons = 40;
-      } else {
-        menu.addClass('visible');
-        menuToggle.addClass('cross');
-        postitonMenu = 0;
-        positionButtons = menu.width() + 40;
-      }
+    open: function() {
+      var menu = $('#main-menu');
+      menu.addClass('visible');
+      TweenMax.to(menu, 0.4, {left: 0, ease: Expo.easeInOut});
+      TweenMax.to($('#menu-toggle'), 0.4, {opacity: 0, ease: Expo.easeInOut});
+    },
 
-      TweenMax.to(menu, 0.4, {left: postitonMenu, ease: Expo.easeInOut});
-      TweenMax.to($('#menu-buttons'), 0.4, {left: positionButtons, ease: Expo.easeInOut});
-    });
+    bind: function() {
+      $(document).on('click', '#menu-toggle', function(event) {
+        App.menu.open();
+        // var menuToggle = $('#menu-toggle'), menu = $('#main-menu');
+        // var postitonMenu = 0, positionButtons = 0;
+
+        // if (menu.hasClass('visible')) {
+        //   menu.toggleClass('visible');
+        //   menuToggle.removeClass('cross');
+        //   postitonMenu = -menu.width();
+        //   positionButtons = 40;
+        // } else {
+        //   menu.addClass('visible');
+        //   menuToggle.addClass('cross');
+        //   postitonMenu = 0;
+        //   positionButtons = menu.width() + 40;
+        // }
+
+        // TweenMax.to(menu, 0.4, {left: postitonMenu, ease: Expo.easeInOut});
+        // TweenMax.to($('#menu-toggle'), 0.4, {left: positionButtons, ease: Expo.easeInOut});
+      });
+
+      $(document).on('click', 'html', function() {
+        App.menu.hide();
+      });
+
+      $(document).on('click', '#main-menu, #menu-toggle', function() {
+        if (menu.hasClass('visible'))
+          event.stopPropagation();
+      });
+    }
   },
 
   social_icons: function() {
@@ -62,7 +88,7 @@ var App = {
     self = this;
     
     App.image_copyright();
-    App.menu();
+    App.menu.bind();
     App.social_icons();
 
     App.rail.start();
