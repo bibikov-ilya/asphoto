@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
   devise_for :admins
+  devise_scope :admin do
+    get '/login' => 'sessions#new', :as => :new_user_session, constraints: {format: 'html'}
+    post '/login' => 'sessions#create', :as => :user_session, constraints: {format: 'html'}
+    delete '/logout' => 'sessions#destroy', :as => :destroy_user_session, constraints: {format: 'html'}
+  end
+
   root 'galleries#index'
 
   resource :gallery
