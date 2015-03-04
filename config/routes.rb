@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   resource :gallery
   resources :photos
+  resource :dashboard
+  scope module: 'admin', as: :admin do
+    resources :galleries, only: [:index]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

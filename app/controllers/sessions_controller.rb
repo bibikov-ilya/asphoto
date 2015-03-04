@@ -1,3 +1,6 @@
 class SessionsController < Devise::SessionsController
-  layout 'application'
+  def create
+    super
+    redirect_to admin_galleries_path
+  end
 end
