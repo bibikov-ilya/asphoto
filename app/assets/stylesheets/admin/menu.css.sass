@@ -1,0 +1,96 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway)
+#admin-menu,
+#admin-menu ul,
+#admin-menu ul li,
+#admin-menu ul li a
+  margin: 0
+  padding: 0
+  border: 0
+  list-style: none
+  line-height: 1
+  display: block
+  position: relative
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+#admin-menu:after,
+#admin-menu > ul:after 
+  content: "."
+  display: block
+  clear: both
+  visibility: hidden
+  line-height: 0
+  height: 0
+
+#admin-menu
+  width: auto
+  border-bottom: 3px solid rgb(173,5,5)
+  font-family: Raleway, sans-serif
+  line-height: 1
+
+#admin-menu ul 
+  background: #ffffff
+
+#admin-menu > ul > li
+  float: left
+
+#admin-menu.align-center > ul 
+  font-size: 0
+  text-align: center
+
+#admin-menu.align-center > ul > li 
+  display: inline-block
+  float: none
+
+#admin-menu.align-right > ul > li 
+  float: right
+
+#admin-menu.align-right > ul > li > a 
+  margin-right: 0
+  margin-left: -4px
+
+#admin-menu > ul > li > a 
+  z-index: 2
+  padding: 18px 25px 12px 25px
+  font-size: 15px
+  font-weight: 400
+  text-decoration: none
+  color: #444444
+  -webkit-transition: all .2s ease
+  -moz-transition: all .2s ease
+  -ms-transition: all .2s ease
+  -o-transition: all .2s ease
+  transition: all .2s ease
+  margin-right: -4px
+
+#admin-menu > ul > li.active > a,
+#admin-menu > ul > li:hover > a,
+#admin-menu > ul > li > a:hover 
+  color: #ffffff
+
+#admin-menu > ul > li > a:after 
+  position: absolute
+  left: 0
+  bottom: 0
+  right: 0
+  z-index: -1
+  width: 100%
+  height: 120%
+  border-top-left-radius: 8px
+  border-top-right-radius: 8px
+  content: ""
+  -webkit-transition: all .2s ease
+  -o-transition: all .2s ease
+  transition: all .2s ease
+  -webkit-transform: perspective(5px) rotateX(2deg)
+  -webkit-transform-origin: bottom
+  -moz-transform: perspective(5px) rotateX(2deg)
+  -moz-transform-origin: bottom
+  transform: perspective(5px) rotateX(2deg)
+  transform-origin: bottom
+
+#admin-menu > ul > li.active > a:after,
+#admin-menu > ul > li:hover > a:after,
+#admin-menu > ul > li > a:hover:after 
+  background: rgb(173,5,5)
