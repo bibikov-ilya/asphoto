@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resource :gallery
   resources :photos
   resource :dashboard
-  scope module: 'admin', as: :admin do
+  namespace :admin do
     resources :galleries, only: [:index]
   end
 
