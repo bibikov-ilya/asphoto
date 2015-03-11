@@ -51,3 +51,4 @@ gem 'greensock-rails'
 gem 'devise'
 
 gem 'simple_form'
+gem 'bootstrap_form'
