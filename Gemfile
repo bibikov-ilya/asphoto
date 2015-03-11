@@ -49,3 +49,5 @@ gem 'autoprefixer-rails'
 gem 'greensock-rails'
 
 gem 'devise'
+
+gem 'simple_form'
