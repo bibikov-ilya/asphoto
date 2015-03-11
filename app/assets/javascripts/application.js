@@ -18,4 +18,5 @@
 //= require greensock/TweenMax
 //= require greensock/easing/EasePack
 //= require greensock/jquery.gsap.js
+//= require_tree ./shared
 //= require_directory .
