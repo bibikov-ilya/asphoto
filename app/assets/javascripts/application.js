@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap.min
 //= require greensock/TweenLite
 //= require greensock/TweenMax
 //= require greensock/easing/EasePack

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :photos
   resource :dashboard
   namespace :admin do
-    resources :galleries, only: [:index]
+    resources :galleries, only: [:index, :new, :create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

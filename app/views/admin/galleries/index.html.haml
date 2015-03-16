@@ -1,0 +1,9 @@
+=link_to 'Add gallery', new_admin_gallery_path, class: 'btn btn-info'
+%table.table.table-striped
+  %tr
+    %th Name
+    %th Image count
+  -@galleries.each do |gallery|
+    %tr
+      %td=gallery.name
+      %td=gallery.photos.count
